@@ -74,6 +74,7 @@ function _thz_filter_disable_block_editor_pt( $use_block_editor, $post_type ){
 
 add_filter( 'use_block_editor_for_post_type', '_thz_filter_disable_block_editor_pt', 10, 2 );
 
+
 // Archive Order by...
 $post_type = array('beschwerde');
 
