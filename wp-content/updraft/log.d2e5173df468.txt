@@ -1,0 +1,205 @@
+0000.005 (0) Opened log file at time: Wed, 30 Jan 2019 13:42:23 +0000 on http://gesundheits-universum.nice
+0000.006 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.0 WP: 5.0.3 PHP: 7.2.9 (fpm-fcgi, Linux 7cfe4a9f904b 4.9.93-boot2docker #1 SMP Thu Jul 19 18:29:50 UTC 2018 x86_64) MySQL: 5.7.23 WPLANG: en_US Server: nginx/1.14.0 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.4M | 2M) multisite: N openssl: OpenSSL 1.1.0f  25 May 2017 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.009 (0) Free space on disk containing Updraft's temporary directory: 166219.3 MB
+0000.022 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.024 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.165 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1548718820, seconds_ago=136923)
+0000.168 (0) Set semaphore last lock (fd) time to 2019-01-30 13:42:23
+0000.171 (0) Semaphore lock (fd) complete
+0000.175 (0) Backup run: resumption=0, nonce=d2e5173df468, file_nonce=d2e5173df468 begun at=1548855743 (0s ago), job type=backup
+0000.177 (0) Scheduling a resumption (1) after 300 seconds (1548856043) in case this run gets aborted
+0000.235 (0) Checking if we have a zip executable available
+0000.239 (0) Creation of backups of directories: beginning
+0000.252 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0008.076 (0) Total entities for the zip file: 297 directories, 1875 files (0 skipped as non-modified), 32.2 MB
+0008.086 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0008.835 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 100 files added (on-disk size: 60.6 KB)
+0009.318 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 200 files added (on-disk size: 60.6 KB)
+0009.753 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 300 files added (on-disk size: 60.6 KB)
+0010.264 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 400 files added (on-disk size: 60.6 KB)
+0010.683 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 500 files added (on-disk size: 60.6 KB)
+0010.695 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (9.7 MB, 1875 files batched, 501 (502) added so far); re-opening (prior size: 60.6 KB)
+0021.814 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 600 files added (on-disk size: 3246.4 KB)
+0022.327 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 700 files added (on-disk size: 3246.4 KB)
+0022.735 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 800 files added (on-disk size: 3246.4 KB)
+0023.237 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 900 files added (on-disk size: 3246.4 KB)
+0023.918 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (18.3 MB, 481 (983) files added so far); re-opening (prior size: 3246.4 KB)
+0036.086 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1000 files added (on-disk size: 8384 KB)
+0036.873 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1100 files added (on-disk size: 8384 KB)
+0037.515 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1200 files added (on-disk size: 8384 KB)
+0038.280 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1300 files added (on-disk size: 8384 KB)
+0038.909 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1400 files added (on-disk size: 8384 KB)
+0038.925 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (1.7 MB, 419 (1402) files added so far); re-opening (prior size: 8384 KB)
+0047.050 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1500 files added (on-disk size: 9003.5 KB)
+0047.665 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1600 files added (on-disk size: 9003.5 KB)
+0048.299 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1700 files added (on-disk size: 9003.5 KB)
+0048.879 (0) Zip: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip.tmp: 1800 files added (on-disk size: 9003.5 KB)
+0048.924 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (2.1 MB, 404 (1806) files added so far); re-opening (prior size: 9003.5 KB)
+0058.296 (0) Created plugins zip (0) - 9801.2 KB in 58 s (168.9 KB/s) (sha1: 433665c216ddac0087fe4347471fce4eb1e79500, sha256: d05ff0a7b67cc2ee3dd4110e77d65aa872d224396c3aee8f2e0243b7011f6e26)
+0058.321 (0) Beginning creation of dump of themes (split every: 400 MB)
+0058.492 (0) Total entities for the zip file: 11 directories, 72 files (0 skipped as non-modified), 1.2 MB
+0059.792 (0) Created themes zip (0) - 797.4 KB in 1.5 s (549.7 KB/s) (sha1: 173f6b8f114711149b0f718357cf3b50ffa044cc, sha256: c4f740d2bfb456241147e444949052eefd7a4500d36aac481c9ee4753c548473)
+0059.814 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0059.818 (0) Looking for candidates to backup in: /app/public/wp-content/uploads
+0059.821 (0) finding files: 2018: adding to list (1)
+0059.822 (0) finding files: 2019: adding to list (2)
+0059.823 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0059.906 (0) Total entities for the zip file: 4 directories, 23 files (0 skipped as non-modified), 0.7 MB
+0060.311 (0) Created uploads zip (0) - 702.1 KB in 0.5 s (1502.1 KB/s) (sha1: b33dd59269479ff3377cab088432249c0ce89129, sha256: cabfadc205169ce8247454bb6e625fad07ffa744dc3ecddfbefe09a8fa10f393)
+0060.335 (0) Beginning backup of other directories found in the content directory (index: 0)
+0060.336 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0060.338 (0) Looking for candidates to backup in: /app/public/wp-content
+0060.341 (0) finding files: index.php: adding to list (1)
+0060.343 (0) finding files: mu-plugins: adding to list (2)
+0060.344 (0) finding files: plugins: skipping: this is the plugins directory
+0060.345 (0) finding files: themes: skipping: this is the themes directory
+0060.346 (0) finding files: updraft: skipping: this is the updraft directory
+0060.348 (0) finding files: upgrade: skipping: excluded by options
+0060.349 (0) finding files: uploads: skipping: this is the uploads directory
+0060.381 (0) Total entities for the zip file: 1 directories, 2 files (0 skipped as non-modified), 0 MB
+0060.448 (0) Created others zip (0) - 1.4 KB in 0.1 s (17.6 KB/s) (sha1: 50438eb85d1b5b2da0cf434453f6ffb480ccfc07, sha256: ab2b92bf8dd20f8df29abeac079b10e67092bce3960ebb93457126c82b9e3258)
+0060.482 (0) Saving backup status to database (elements: 8)
+0060.487 (0) Beginning creation of database dump (WordPress DB)
+0060.498 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0060.519 (0) Binary mysqldump: error (code: 2)
+0060.543 (0) Table wp_oho7svvu2e_options: Total expected rows (approximate): 190
+0060.547 (0) Table wp_oho7svvu2e_options: Total rows added: 186 in 0.00 seconds
+0060.554 (0) Table wp_oho7svvu2e_options: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_options.table.gz - 8.8 KB)
+0060.563 (0) Table wp_oho7svvu2e_users: Total expected rows (approximate): 1
+0060.565 (0) Table wp_oho7svvu2e_users: Total rows added: 2 in 0.00 seconds
+0060.571 (0) Table wp_oho7svvu2e_users: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_users.table.gz - 0.7 KB)
+0060.583 (0) Table wp_oho7svvu2e_usermeta: Total expected rows (approximate): 48
+0060.585 (0) Table wp_oho7svvu2e_usermeta: Total rows added: 52 in 0.00 seconds
+0060.592 (0) Table wp_oho7svvu2e_usermeta: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_usermeta.table.gz - 1.8 KB)
+0060.605 (0) Table wp_oho7svvu2e_commentmeta: Total expected rows (approximate): 0
+0060.609 (0) Table wp_oho7svvu2e_commentmeta: Total rows added: 0 in 0.00 seconds
+0060.616 (0) Table wp_oho7svvu2e_commentmeta: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_commentmeta.table.gz - 0.4 KB)
+0060.627 (0) Table wp_oho7svvu2e_comments: Total expected rows (approximate): 0
+0060.630 (0) Table wp_oho7svvu2e_comments: Total rows added: 1 in 0.00 seconds
+0060.636 (0) Table wp_oho7svvu2e_comments: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_comments.table.gz - 0.7 KB)
+0060.648 (0) Table wp_oho7svvu2e_links: Total expected rows (approximate): 0
+0060.653 (0) Table wp_oho7svvu2e_links: Total rows added: 0 in 0.00 seconds
+0060.659 (0) Table wp_oho7svvu2e_links: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_links.table.gz - 0.5 KB)
+0060.670 (0) Table wp_oho7svvu2e_postmeta: Total expected rows (approximate): 1440
+0060.681 (0) Table wp_oho7svvu2e_postmeta: Total rows added: 1440 in 0.01 seconds
+0060.691 (0) Table wp_oho7svvu2e_postmeta: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_postmeta.table.gz - 23.7 KB)
+0060.703 (0) Table wp_oho7svvu2e_posts: Total expected rows (approximate): 230
+0060.710 (0) Table wp_oho7svvu2e_posts: Total rows added: 230 in 0.01 seconds
+0060.717 (0) Table wp_oho7svvu2e_posts: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_posts.table.gz - 10.3 KB)
+0060.730 (0) Table wp_oho7svvu2e_term_relationships: Total expected rows (approximate): 24
+0060.732 (0) Table wp_oho7svvu2e_term_relationships: Total rows added: 24 in 0.00 seconds
+0060.738 (0) Table wp_oho7svvu2e_term_relationships: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_term_relationships.table.gz - 0.4 KB)
+0060.751 (0) Table wp_oho7svvu2e_term_taxonomy: Total expected rows (approximate): 6
+0060.753 (0) Table wp_oho7svvu2e_term_taxonomy: Total rows added: 7 in 0.00 seconds
+0060.760 (0) Table wp_oho7svvu2e_term_taxonomy: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_term_taxonomy.table.gz - 0.5 KB)
+0060.772 (0) Table wp_oho7svvu2e_termmeta: Total expected rows (approximate): 0
+0060.773 (0) Table wp_oho7svvu2e_termmeta: Total rows added: 0 in 0.00 seconds
+0060.779 (0) Table wp_oho7svvu2e_termmeta: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_termmeta.table.gz - 0.4 KB)
+0060.792 (0) Table wp_oho7svvu2e_terms: Total expected rows (approximate): 6
+0060.794 (0) Table wp_oho7svvu2e_terms: Total rows added: 7 in 0.00 seconds
+0060.800 (0) Table wp_oho7svvu2e_terms: finishing file (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_terms.table.gz - 0.5 KB)
+0060.813 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_options.table.gz (1/12): adding to final database dump
+0060.817 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_users.table.gz (2/12): adding to final database dump
+0060.820 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_usermeta.table.gz (3/12): adding to final database dump
+0060.822 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_commentmeta.table.gz (4/12): adding to final database dump
+0060.825 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_comments.table.gz (5/12): adding to final database dump
+0060.830 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_links.table.gz (6/12): adding to final database dump
+0060.832 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_postmeta.table.gz (7/12): adding to final database dump
+0060.839 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_posts.table.gz (8/12): adding to final database dump
+0060.845 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_term_relationships.table.gz (9/12): adding to final database dump
+0060.848 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_term_taxonomy.table.gz (10/12): adding to final database dump
+0060.852 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_termmeta.table.gz (11/12): adding to final database dump
+0060.854 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db-table-wp_oho7svvu2e_terms.table.gz (12/12): adding to final database dump
+0060.862 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db.gz: finished writing out complete database file (24 KB)
+0060.891 (0) Total database tables backed up: 12 (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db.gz, size: 47389, sha256)
+0060.900 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0060.902 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0060.903 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0060.905 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-others.zip: others: This file has not yet been successfully uploaded: will queue
+0060.906 (0) backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db.gz: db: This file has not yet been successfully uploaded: will queue
+0060.907 (0) Saving backup history. Total backup size: 11.1 MB
+0060.912 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0060.918 (0) Cloud backup selection (1/1): dropbox with instance (1/1) (last)
+0060.921 (0) Beginning dispatch of backup to remote (dropbox) (instance identifier s-a3a932ab6d106a62638e4d6c162bf555)
+0060.923 (0) Dropbox: begin cloud upload (using API version 2 with OAuth v2 token)
+0060.992 (0) Dropbox: access gained; setting chunk size to: 1024 KB
+0064.493 (0) Dropbox: quota usage: used=801 MB, total=2048 MB, available=1247 MB
+0064.496 (0) Dropbox: Attempt to upload: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip to: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip
+0066.327 (0) Dropbox chunked upload: 10.4 % uploaded (AAAAAAAAAPtZTKtMXPfpfA, 1048576, 4608 KB)
+0070.505 (0) Dropbox chunked upload: 57.5 % uploaded (AAAAAAAAAPtZTKtMXPfpfA, 5767168, 9728 KB)
+0074.484 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAAPtZTKtMXPfpfA, 10036406, 9728 KB)
+0076.541 (0) Recording as successfully uploaded: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip
+0076.552 (0) Deleting local file: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip: OK
+0076.554 (0) Dropbox: File upload success (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-plugins.zip): 9801 KB in 12s (812 KB/s)
+0076.999 (0) Dropbox: quota usage: used=810.5 MB, total=2048 MB, available=1237.5 MB
+0077.004 (0) Dropbox: Attempt to upload: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-themes.zip to: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-themes.zip
+0078.655 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAAPxfzGvE5d8ehw, 816582, 9728 KB)
+0080.181 (0) Recording as successfully uploaded: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-themes.zip
+0080.190 (0) Deleting local file: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-themes.zip: OK
+0080.192 (0) Dropbox: File upload success (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-themes.zip): 797 KB in 3s (250 KB/s)
+0081.255 (0) Dropbox: quota usage: used=811.3 MB, total=2048 MB, available=1236.7 MB
+0081.259 (0) Dropbox: Attempt to upload: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-uploads.zip to: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-uploads.zip
+0082.371 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAAP10vNTDmfqWuw, 718994, 9728 KB)
+0083.775 (0) Recording as successfully uploaded: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-uploads.zip
+0083.785 (0) Deleting local file: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-uploads.zip: OK
+0083.786 (0) Dropbox: File upload success (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-uploads.zip): 702 KB in 2s (277 KB/s)
+0084.856 (0) Dropbox: quota usage: used=812 MB, total=2048 MB, available=1236 MB
+0084.859 (0) Dropbox: Attempt to upload: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-others.zip to: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-others.zip
+0085.638 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAAP6MY73RYdoqJQ, 1394, 9728 KB)
+0087.502 (0) Recording as successfully uploaded: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-others.zip
+0087.514 (0) Deleting local file: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-others.zip: OK
+0087.515 (0) Dropbox: File upload success (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-others.zip): 1 KB in 2s (0 KB/s)
+0087.875 (0) Dropbox: quota usage: used=812 MB, total=2048 MB, available=1236 MB
+0087.881 (0) Dropbox: Attempt to upload: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db.gz to: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db.gz
+0088.719 (0) Dropbox chunked upload: 100 % uploaded (AAAAAAAAAP-mxCqhUTeytA, 47389, 9728 KB)
+0090.117 (0) Recording as successfully uploaded: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db.gz
+0090.131 (0) Deleting local file: backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db.gz: OK
+0090.136 (0) Dropbox: File upload success (backup_2019-01-30-1342_Gesundheits_Universum_d2e5173df468-db.gz): 46 KB in 2s (20 KB/s)
+0090.171 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0090.180 (0) Number of backup sets in history: 3; groups (db): 1
+0090.184 (0) Examining (for databases) backup set with group_id=0, nonce=d2e5173df468, datestamp=1548855743 (Jan 30 2019 13:42:23)
+0090.185 (0) This backup set is the backup set just made, so will not be deleted.
+0090.186 (0) Examining (for databases) backup set with group_id=0, nonce=d0af12f93561, datestamp=1548718820 (Jan 28 2019 23:40:20)
+0090.186 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0090.187 (0) Examining (for databases) backup set with group_id=0, nonce=63455e6c7129, datestamp=1548682399 (Jan 28 2019 13:33:19)
+0090.187 (0) 1548682399: db: this set includes a database (backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-db.gz); db count is now 2
+0090.187 (0) 1548682399: db: over retain limit (2); will delete this database
+0090.188 (0) Delete file: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-db.gz, service=dropbox
+0090.190 (0) Dropbox: request deletion: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-db.gz
+0091.285 (0) Dropbox: delete succeeded
+0091.291 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0091.293 (0) Number of backup sets in history: 3; groups (files): 1
+0091.295 (0) Examining (for files) backup set with nonce=d2e5173df468, datestamp=1548855743 (Jan 30 2019 13:42:23)
+0091.295 (0) This backup set is the backup set just made, so will not be deleted.
+0091.297 (0) This backup set is the backup set just made, so will not be deleted.
+0091.298 (0) This backup set is the backup set just made, so will not be deleted.
+0091.300 (0) This backup set is the backup set just made, so will not be deleted.
+0091.300 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0091.303 (0) Examining (for files) backup set with nonce=d0af12f93561, datestamp=1548718820 (Jan 28 2019 23:40:20)
+0091.303 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0091.303 (0) Examining (for files) backup set with nonce=63455e6c7129, datestamp=1548682399 (Jan 28 2019 13:33:19)
+0091.303 (0) plugins: over retain limit (2); will delete this file entity
+0091.303 (0) themes: over retain limit (2); will delete this file entity
+0091.303 (0) uploads: over retain limit (2); will delete this file entity
+0091.303 (0) others: over retain limit (2); will delete this file entity
+0091.303 (0) Delete file: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-plugins.zip, service=dropbox
+0091.306 (0) Delete file: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-themes.zip, service=dropbox
+0091.308 (0) Delete file: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-uploads.zip, service=dropbox
+0091.313 (0) Delete file: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-others.zip, service=dropbox
+0091.318 (0) Dropbox: request deletion: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-plugins.zip
+0092.711 (0) Dropbox: delete succeeded
+0092.712 (0) Dropbox: request deletion: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-themes.zip
+0094.009 (0) Dropbox: delete succeeded
+0094.017 (0) Dropbox: request deletion: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-uploads.zip
+0095.996 (0) Dropbox: delete succeeded
+0095.998 (0) Dropbox: request deletion: backup_2019-01-28-1333_Gesundheits_Universum_63455e6c7129-others.zip
+0098.283 (0) Dropbox: delete succeeded
+0098.294 (0) This backup set is now empty; will remove from history
+0098.298 (0) Corresponding log file (log.63455e6c7129.txt) not found - must have already been deleted
+0098.303 (0) Retain: saving new backup history (sets now: 2) and finishing retain operation
+0098.319 (0) Resume backup (d2e5173df468, 0): finish run
+0098.324 (0) Decremented the semaphore (fd) by 1
+0098.328 (0) Semaphore (fd) unlocked
+0098.330 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0098.339 (0) No email will/can be sent - the user has not configured an email address.
+0098.340 (0) The backup apparently succeeded and is now complete

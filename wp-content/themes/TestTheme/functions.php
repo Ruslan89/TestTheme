@@ -74,3 +74,17 @@ function _thz_filter_disable_block_editor_pt( $use_block_editor, $post_type ){
 
 add_filter( 'use_block_editor_for_post_type', '_thz_filter_disable_block_editor_pt', 10, 2 );
 
+// Archive Order by...
+$post_type = array('beschwerde');
+
+function my_change_sort_order($query){
+	if(is_post_type_archive($post_type)):
+	 //If you wanted it for the archive of a custom post type use: is_post_type_archive( $post_type )
+	   //Set the order ASC or DESC
+	   $query->set( 'order', 'ASC' );
+	   //Set the orderby
+	   $query->set( 'orderby', 'title' );
+	endif;    
+}
+
+add_action( 'pre_get_posts', 'my_change_sort_order');
