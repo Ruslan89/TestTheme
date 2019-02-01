@@ -13,7 +13,7 @@
 }
 
 .page-section {
-  padding-top: 1.6rem;
+  padding-top: 2.6rem;
   padding-bottom: 1.6rem;
   @mixin atSmall {
     padding-top: 3.5rem;
@@ -37,8 +37,11 @@
   position: relative;
   z-index: 20;
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1.36rem;
   font-weight: 100;
+}
+@mixin atSmall {
+  font-size: 2.75rem;
 }
 
 .school-logo-text strong {

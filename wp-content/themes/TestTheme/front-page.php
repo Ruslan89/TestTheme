@@ -15,12 +15,14 @@ get_header();
   <div class="full-width-split group">
     <div class="full-width-split__one">
       <div class="full-width-split__inner">
-        <h2 class="headline headline--small-plus t-center">Häufige Beschwerden</h2>
+        <h2 class="headline headline--small-plus t-center">Bisher gelistete Beschwerden</h2>
         
-        <?php //Fiter für Postausgabe (Beschwerden):
+        <?php 
         $homepageBeschwerden = new WP_Query (array(
-          'posts_per_page'  => 2,
+          'posts_per_page'  => 3,
           'post_type'       => 'beschwerde',
+          'orderby'        => 'menu_order',
+          'order' => 'ASC'
         ));
 
         while($homepageBeschwerden->have_posts()) {
@@ -33,12 +35,13 @@ get_header();
           </a>
           <div class="event-summary__content">
             <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-            <!--//Textinhalt auf 18 Woerter trimmen -->
+            
             <p><?php if (has_excerpt()) {
               echo get_the_excerpt();
             } else {
-              echo wp_trim_words(get_the_content(), 20);
-            } ?><a href="<?php the_permalink(); ?>" class="nu gray">Lesen</a></p>
+              echo wp_trim_words(get_field('main_body_content'), 20);
+            } ?>
+			<p><a class="btn btn--blue-margin-top" href="<?php the_permalink(); ?>">Lesen &raquo;</a></p>
           </div>
         </div>
 
@@ -54,11 +57,11 @@ get_header();
       <div class="full-width-split__inner">
         <h2 class="headline headline--small-plus t-center">GU Magazin</h2>
         <?php
-          $homepagePosts = new WP_Query (array(             //Custom Query (Ausgabe)
-            'posts_per_page' => 2,                          //Einstellungen der Ausgabe
+          $homepagePosts = new WP_Query (array(             
+            'posts_per_page' => 2,                          
           ));
 
-          while ($homepagePosts->have_posts()) {            //Ausgabe der Einstellungen
+          while ($homepagePosts->have_posts()) {            
             $homepagePosts->the_post(); ?>
             
           <div class="event-summary">
@@ -68,7 +71,7 @@ get_header();
           </a>
           <div class="event-summary__content">
             <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-            <!--//Textinhalt auf 18 Woerter trimmen -->
+            
             <p><?php if (has_excerpt()) {
               echo get_the_excerpt();
             } else {
@@ -101,7 +104,11 @@ get_header();
     <div class="hero-slider__interior container">
       <div class="hero-slider__overlay">
         <h2 class="headline headline--medium t-center"><?php the_title(); ?></h2>
-        <p class="t-center">Hier soll noch der dynamische Excerpt angezeigt werden</p>
+        <p class="t-center"><?php if (has_excerpt()) {
+              echo get_the_excerpt();
+            } else {
+              echo wp_trim_words(get_field('main_body_content'), 20);
+            } ?></p>
         <p class="t-center no-margin"><a href="<?php the_permalink(); ?>" class="btn btn--blue">Mehr erfahren</a></p>
       </div>
     </div>

@@ -28,7 +28,7 @@ add_action('rest_api_init', 'gu_custom_rest');
 
 
 function gesundheits_features() { 	//Hier bestimmen wir, welche Features in WP angezeigt werden sollen
-	//register_nav_menu('headerMenuLocation', 'Header Menu Location'); //Menu Option wird in WP angezeigt
+	register_nav_menu('headerMenuLocation', 'Header Menu Location'); //Menu Option wird in WP angezeigt
 	//register_nav_menu('footerLocationOne', 'Footer Location One');   //Footer Menu. In WP angezeigt
 	//register_nav_menu('footerLocationTwo', 'Footer Location Two');
 

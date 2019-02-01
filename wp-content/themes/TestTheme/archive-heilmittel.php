@@ -19,8 +19,12 @@ while(have_posts()){
 			<p><?php echo get_the_category_list(', ') ?></p>
 		</div>
 		<div>
-			<?php the_excerpt(); ?>
-			<p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Zum Heilmittel &raquo;</a></p>
+		<?php if (has_excerpt()) {
+              echo get_the_excerpt();
+            } else {
+              echo wp_trim_words(get_field('main_body_content'), 20);
+            } ?>
+			<p><a class="btn btn--blue-margin-top" href="<?php the_permalink(); ?>">Zum Heilmittel &raquo;</a></p>
 		</div>
 	</div>
 

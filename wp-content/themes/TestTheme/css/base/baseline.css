@@ -4,17 +4,26 @@
   }
 }
 
-@define-mixin atSmallMedium {
-  @media (min-width: 767px) {
+@define-mixin atMedium {
+  @media (min-width: 800px) {
     @mixin-content;
   }
 }
 
-@define-mixin atMedium {
-  @media (min-width: 960px) {
+@define-mixin atLarge {
+  @media (min-width: 1010px) {
     @mixin-content;
   }
 }
+
+@define-mixin clearfix { 
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
 
 body {
   color: #333;
