@@ -29,7 +29,7 @@
 	          	<li <?php if (get_post_type() == 'post') echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/magazin'); ?>">Magazin</a></li>	            
 	            <li <?php if (get_post_type() == 'beschwerde') echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link('beschwerde'); ?>">Beschwerden</a></li>
 	            <li <?php if (get_post_type() == 'heilmittel') echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link('heilmittel'); ?>">Heilmittel</a></li>
-	            <!-- <li <?php if (get_post_type() == 'vitalstoff') echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link('vitalstoff'); ?>">Vitalstoffe</a></li>-->	            
+	            <li <?php if (get_post_type() == 'vitalstoff') echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link('vitalstoff'); ?>">Vitalstoffe</a></li>	            
 	            <!--//Menu Farbmarkierung: Wenn wir bei "ueber uns" (Seiten Nummer=20/in WP nachschauen) sind, oder auf einer Child Seite, dann wird das Farbschema 'current-menu-item' abgerufen-->
 	            <li <?php if (is_page('ueber-uns') or wp_get_post_parent_id(0) == 20) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/ueber-uns'); ?>">Über uns</a></li>
 	          </ul>

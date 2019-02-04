@@ -10,7 +10,7 @@ function gesundheits_post_types () {
 		'capability_type' 	=> 'heilmittel',
 		'map_meta_cap'		=> true,
 		'show_in_rest' 		=> true,
-		'supports' 			=> array('title', 'excerpt', 'thumbnail'),
+		'supports' 			=> array('title', 'excerpt', 'page-attributes', 'thumbnail'),
 		'taxonomies' 		=> array('category', 'post_tag'),
 		'rewrite' 			=> array('slug' => 'heilmittel'),
 		'has_archive' 		=> true, 
@@ -26,7 +26,7 @@ function gesundheits_post_types () {
 	));
 //Vitalstoffe	
 	register_post_type('vitalstoff', array(
-		'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+		'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'thumbnail'),
 		'taxonomies' => array('category', 'post_tag'),
 		'rewrite' => array('slug' => 'vitalstoffe'),
 		'has_archive' => true, 
@@ -38,7 +38,7 @@ function gesundheits_post_types () {
 			'all_items' => 'Alle Vitalstoffe',
 			'singular_name' => 'Vitalstoff',
 		),
-		'menu_icon' => 'dashicons-plus-alt' 
+		'menu_icon' => 'dashicons-star-empty' 
 	));
 
 //Beschwerden	

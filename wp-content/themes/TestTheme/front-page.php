@@ -7,8 +7,8 @@ get_header();
     <div class="page-banner__content container t-center c-white">
       <h1 class="headline headline--large">Willkommen!</h1>
       <h2 class="headline headline--medium">Lerne dich selbst zu heilen</h2>
-      <h3 class="headline headline--small">Drücke "S" für die Suche</h3>
-      <a href="#" class="btn btn--large btn--blue">Suche öffnen</a>
+      <h3 class="headline headline--small">Infoseite</h3>
+      <!--<a href="#" class="btn btn--large btn--blue">Suche öffnen</a>-->
     </div>
   </div>
 

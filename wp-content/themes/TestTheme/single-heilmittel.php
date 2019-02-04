@@ -93,7 +93,7 @@ while(have_posts()) {
             </div>
     </div>
   </div> 
-</div>
+
 
     
 <div class="generic-content">
@@ -104,7 +104,7 @@ while(have_posts()) {
         echo '<h2 class="headline headline--medium">Verwandte Themen zu ' . get_the_title() . ':</h2>'; 
         ?>
         
-        <div class="one-third">
+        <div class="one-half">
           <?php 
           // Magazin
           $verwandterMagazinbeitrag = new WP_Query (array(
@@ -133,13 +133,13 @@ while(have_posts()) {
           ?>
         </div>
 
-        <div class="one-third">
+        <div class="one-half">
           <?php  
           // Beschwerden
           $passendeBeschwerde = new WP_Query (array(
             'posts_per_page'  => 3,
             'post_type'       => 'beschwerde', 
-            'orderby'         => 'meta_value_num',
+            'orderby'         => 'menu_order',
             'order'           => 'ASC',
             'meta_query'      =>  array (
                                     array (
@@ -152,7 +152,7 @@ while(have_posts()) {
 
           if ($passendeBeschwerde->have_posts()) {
             echo '<hr class="section-break">';
-            echo '<h2 class="headline headline--medium-centered">Beschwerden</h2>';     
+            echo '<h2 class="headline headline--medium">Beschwerden</h2>';     
             while($passendeBeschwerde->have_posts()) {
               $passendeBeschwerde->the_post(); 
               get_template_part('template-parts/content-beschwerde', 'excerpt');
@@ -162,7 +162,7 @@ while(have_posts()) {
           ?>
         </div>
 
-        <div class="one-third">
+        <!--<div class="one-third">
           <?php 
           // Heilmittel:
           $passendesHeilmittel = get_field('passendes_heilmittel');
@@ -182,17 +182,17 @@ while(have_posts()) {
                 <?php the_excerpt(); ?>
                 <p><a class="btn btn--blue" href="<?php echo get_the_permalink($heilmittel); ?>">Zum Heilmittel &raquo;</a></p>
               </div>
-            </div>
+            </div> 
 
           <?php }
             echo '</ul>';
           } ?>
-        </div>
+        </div> 
           
         
-      </div>  
+      </div>  -->
   	</div>
-  </div>
+  </div> 
 	
 <?php }
 get_footer();
