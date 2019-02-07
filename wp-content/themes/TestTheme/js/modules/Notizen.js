@@ -24,9 +24,9 @@ class Notizen {
 		}
 		
 	}
-	updateUl() {
+	/*updateUl() {
     $("#notizen").load(window.location.href + " #notizen"); 
-	}
+	}*/
 
 	makeNoteEditable(thisNote) {
 		thisNote.find(".edit-note").html('<i class="fa fa-times" aria-hidden="true"></i> Abbrechen');
@@ -96,43 +96,42 @@ class Notizen {
 
 	createNote(e) {
 		var ourNewPost = {
-			'title' 	: $(".new-note-title").val(),
-			'content' 	: $(".new-note-body").val(),
-			'status'	: 'publish'
+		  'title': $(".new-note-title").val(),
+		  'content': $(".new-note-body").val(),
+		  'status': 'publish'
 		}
-
+		
 		$.ajax({
-			beforeSend: (xhr) => {
-				xhr.setRequestHeader('X-WP-Nonce', guData.nonce);
-			},
-
-			url: guData.root_url + '/wp-json/wp/v2/notiz/',
-			type: 'POST', 
-			data: ourNewPost,
-			success: (response) => {
-				$(".new-note-title, .new-note-body").val('');
-				$(`
-				<li data-id="${response.id}">
-		            <input readonly class="note-title-field" value="${response.title.raw}">
-		            <span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i> Bearbeiten</span>
-		            <span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i> Löschen</span>
-		            <textarea readonly class="note-body-field">${response.content.raw}</textarea>
-		            <span class="update-note btn btn--blue btn--small"><i class="fa fa-arrow-right" aria-hidden="true"></i> Speichern</span>
-		          </li>
-					`).prependTo("#notizen").hide().slideDown();
-				console.log("Congrats");
-				console.log(response);
-			},
-			error: (response) => {
-				if(response.responseText == "Notizen Limit erreicht") {
-					$(".note-limit-message").addClass("active");
-				};
-				console.log("Sorry");
-				console.log(response);
+		  beforeSend: (xhr) => {
+			xhr.setRequestHeader('X-WP-Nonce', guData.nonce);
+		  },
+		  url: guData.root_url + '/wp-json/wp/v2/notiz/',
+		  type: 'POST',
+		  data: ourNewPost,
+		  success: (response) => {
+			$(".new-note-title, .new-note-body").val('');
+			$(`
+			  <li data-id="${response.id}">
+				<input readonly class="note-title-field" value="${response.title.raw}">
+				<span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
+				<span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</span>
+				<textarea readonly class="note-body-field">${response.content.raw}</textarea>
+				<span class="update-note btn btn--blue btn--small"><i class="fa fa-arrow-right" aria-hidden="true"></i> Save</span>
+			  </li>
+			  `).prependTo("#my-notes").hide().slideDown();
+	
+			console.log("Congrats");
+			console.log(response);
+		  },
+		  error: (response) => {
+			if(response.responseText == "Notizen Limit erreicht") {
+			  $(".note-limit-message").addClass("active");
 			}
+			console.log("Sorry");
+			console.log(response);
+		  }
 		});
+	  }
 	}
-
-}
 
 export default Notizen;

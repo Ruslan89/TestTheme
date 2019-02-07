@@ -104,7 +104,7 @@ while(have_posts()) {
         echo '<h2 class="headline headline--medium">Verwandte Themen zu ' . get_the_title() . ':</h2>'; 
         ?>
         
-        <div class="one-half">
+        <div>
           <?php 
           // Magazin
           $verwandterMagazinbeitrag = new WP_Query (array(
@@ -133,7 +133,7 @@ while(have_posts()) {
           ?>
         </div>
 
-        <div class="one-half">
+        <div>
           <?php  
           // Beschwerden
           $passendeBeschwerde = new WP_Query (array(

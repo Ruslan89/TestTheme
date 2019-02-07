@@ -73,7 +73,7 @@ function gesundheits_post_types () {
 			'add_new_item'	=> 'Neue Notiz hinzufügen',
 			'edit_item'		=> 'Notiz bearteiten',
 			'all_items'		=> 'Alle Notizen',
-			'singular_name'	=> 'Notiz'
+			'singular_name'	=> 'Notiz' 
 		),
 		'menu_icon'	=> 'dashicons-welcome-write-blog'
 	));	

@@ -21,6 +21,7 @@ while(have_posts()) {
       <input class="new-note-title" placeholder="Titel">
       <textarea class="new-note-body" placeholder="Deine Notiz..."></textarea>
       <span class="submit-note">Notiz erstellen</span>
+      <p>Bitte Fenster aktualisieren, um die neue Notiz zu sehen. Wir arben noch an dem Problem.</p>
       <span class="note-limit-message">Notizen Limit erreicht: Lösche eine alte Notiz, um eine neue erstellen zu können.</span>
     </div>
 
