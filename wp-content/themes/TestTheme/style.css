@@ -511,6 +511,8 @@ a:hover {
 
 p, ul, ol {
   margin: 0 0 1.65em 0;
+  font-size: 1.1rem;
+  font-weight: 375;
 }
 
 p, li {
@@ -1898,6 +1900,31 @@ body.admin-bar .search-overlay {
 
 .headline--medium {
       font-size: 3.125rem
+  }
+  }
+
+.headline--medium-center {
+    font-size: 1.5rem;
+    margin-bottom: .75rem;
+    text-align: center;
+  }
+
+@media (min-width: 530px) {
+
+.headline--medium-center {
+      font-size: 3.125rem
+  }
+  }
+
+.headline--medium-tab {
+    font-size: 1.5rem;
+    margin-bottom: .75rem;
+  }
+
+@media (min-width: 530px) {
+
+.headline--medium-tab {
+      font-size: 2.125rem
   }
   }
 

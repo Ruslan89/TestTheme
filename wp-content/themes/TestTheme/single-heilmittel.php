@@ -46,39 +46,54 @@ while(have_posts()) {
         <label for="tab-four"   id="tab-four-label"   class="tab">Videos</label>
 
 
-        <div id="tab-one-panel" class="panel active">             
+        <div id="tab-one-panel" class="panel active"> 
+          <hr class="section-break">            
           <p class="headline headline--medium"><?php the_field('content_part_1_text'); ?></p>
         </div>
         <div id="tab-two-panel" class="panel">
+          <hr class="section-break">
           <p class="headline headline--medium"><?php the_field('content_part_2_text'); ?></p>
         </div>
         <div id="tab-three-panel" class="panel">
-          <h3 class="headline headline--medium"><?php the_field('content_part_3_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_3_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_4_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_4_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_5_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_5_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_6_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_6_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_7_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_7_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_8_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_8_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_9_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_9_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_10_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_10_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_11_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_11_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_12_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_12_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_13_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_13_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_14_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_14_text'); ?></p>
-          <h3 class="headline headline--medium"><?php the_field('content_part_15_headline'); ?></h3>
-          <p class="headline headline--medium"><?php the_field('content_part_15_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_3_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_3_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_4_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_4_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_5_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_5_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_6_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_6_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_7_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_7_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_8_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_8_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_9_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_9_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_10_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_10_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_11_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_11_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_12_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_12_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_13_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_13_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_14_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_14_text'); ?></p>
+          <hr class="section-break">
+          <h3 class="headline headline--medium-tab"><?php the_field('content_part_15_headline'); ?></h3>
+          <p class="headline headline--medium-tab"><?php the_field('content_part_15_text'); ?></p>
         </div>
         <div id="tab-four-panel" class="panel">
               <h3 class="headline headline--medium"><?php the_title(); ?> Videos</h3>
@@ -101,7 +116,7 @@ while(have_posts()) {
         <?php 
         echo '<br>';
         echo '<hr class="section-break">';
-        echo '<h2 class="headline headline--medium">Verwandte Themen zu ' . get_the_title() . ':</h2>'; 
+        echo '<h2 class="headline headline--medium-center">Verwandte Themen zu ' . get_the_title() . ':</h2>'; 
         ?>
         
         <div>
@@ -123,7 +138,7 @@ while(have_posts()) {
 
             if ($verwandterMagazinbeitrag->have_posts()) {
               echo '<hr class="section-break">';
-              echo '<h2 class="headline headline--medium">Magazin</h2>';
+              echo '<h2 class="headline headline--medium">Magazin:</h2>';
               while($verwandterMagazinbeitrag->have_posts()) {
                 $verwandterMagazinbeitrag->the_post(); 
                 get_template_part('template-parts/content-post', 'excerpt');
@@ -152,7 +167,7 @@ while(have_posts()) {
 
           if ($passendeBeschwerde->have_posts()) {
             echo '<hr class="section-break">';
-            echo '<h2 class="headline headline--medium">Beschwerden</h2>';     
+            echo '<h2 class="headline headline--medium">Beschwerden:</h2>';     
             while($passendeBeschwerde->have_posts()) {
               $passendeBeschwerde->the_post(); 
               get_template_part('template-parts/content-beschwerde', 'excerpt');
@@ -162,35 +177,104 @@ while(have_posts()) {
           ?>
         </div>
 
-        <!--<div class="one-third">
-          <?php 
-          // Heilmittel:
+        <?php 
+        // Heilmittel
           $passendesHeilmittel = get_field('passendes_heilmittel');
 
           if ($passendesHeilmittel) {
             echo '<hr class="section-break">';
-            echo '<h2 class="headline headline--medium-centered">Heilmittel</h2>';
-          foreach($passendesHeilmittel as $heilmittel) {  ?> 
-
-          <div class="post-item"> 		
+            echo '<h2 class="headline headline--medium-centered">Heilmittel:</h2>';
+            echo '<br>', '<br>', '<br>', '<br>';
+          foreach($passendesHeilmittel as $heilmittel) { ?>
+            <div class="row group">
+              <div class="one-third">
+                  <?php echo get_the_post_thumbnail($heilmittel); ?>
+            </div>
+              
+            <div class="post-item"> 		
               <h2 class="headline headline--medium headline--post-title"><a href="<?php echo get_the_permalink($heilmittel); ?>"><?php echo get_the_title($heilmittel); ?></a></h2>
 
               <div class="metabox">
                 <p><?php echo get_the_category_list(', ') ?></p>
               </div>
-              <div>
-                <?php the_excerpt(); ?>
-                <p><a class="btn btn--blue" href="<?php echo get_the_permalink($heilmittel); ?>">Zum Heilmittel &raquo;</a></p>
-              </div>
-            </div> 
 
-          <?php }
-            echo '</ul>';
+              <div>
+                <?php if (has_excerpt()) {
+                  echo get_the_excerpt();
+                  } else {
+                  echo wp_trim_words(get_field('main_body_content'), 20); 
+                  } ?>
+                  <p><a class="btn btn--blue-margin-top" href="<?php the_permalink(); ?>">Lesen &raquo;</a></p>
+              </div>
+            </div>
+          <?php 
+            } 
           } ?>
-        </div> 
+
+<?php 
+        // Vitalstoff2
+          $passenderVitalstoff = get_field('passender_vitalstoff');
+
+          if ($passenderVitalstoff) {
+            echo '<hr class="section-break">';
+            echo '<h2 class="headline headline--medium-centered">Heilmittel:</h2>';
+            echo '<br>', '<br>', '<br>', '<br>';
+          foreach($passenderVitalstoff as $vitalstoff) { ?>
+            <div class="row group">
+              <div class="one-third">
+                  <?php echo get_the_post_thumbnail($vitalstoff); ?>
+            </div>
+              
+            <div class="post-item"> 		
+              <h2 class="headline headline--medium headline--post-title"><a href="<?php echo get_the_permalink($vitalstoff); ?>"><?php echo get_the_title($heilmittel); ?></a></h2>
+
+              <div class="metabox">
+                <p><?php echo get_the_category_list(', ') ?></p>
+              </div>
+
+              <div>
+                <?php if (has_excerpt()) {
+                  echo get_the_excerpt();
+                  } else {
+                  echo wp_trim_words(get_field('main_body_content'), 20); 
+                  } ?>
+                  <p><a class="btn btn--blue-margin-top" href="<?php the_permalink(); ?>">Lesen &raquo;</a></p>
+              </div>
+            </div>
+          <?php 
+            } 
+          } ?>
           
-        
-      </div>  -->
+          <div>
+          <?php  
+          // Vitalstoff
+          $passenderVitalstoff = new WP_Query (array(
+            'posts_per_page'  => 3,
+            'post_type'       => 'vitalstoff', 
+            'orderby'         => 'menu_order',
+            'order'           => 'ASC',
+            'meta_query'      =>  array (
+                                    array (
+                                      'key'     => 'passendes_heilmittel',
+                                      'compare' => 'LIKE',
+                                      'value'   => '"' . get_the_ID() . '"'
+                                    ),
+                                  ),
+          ));
+
+          if ($passenderVitalstoff->have_posts()) {
+            echo '<hr class="section-break">';
+            echo '<h2 class="headline headline--medium">Vitalstoff:</h2>';     
+            while($passenderVitalstoff->have_posts()) {
+              $passenderVitalstoff->the_post(); 
+              get_template_part('template-parts/content-heilmittel', 'excerpt');
+
+              } wp_reset_postdata();
+            }
+          ?>
+        </div>          
+
+      </div>  
   	</div>
   </div> 
 	
