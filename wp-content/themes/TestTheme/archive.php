@@ -5,7 +5,7 @@ seitenBanner(array(
 	'subtitle'	=> get_the_archive_description(),
 ));
 ?>
-123
+
 <div class="container container--narrow page-section"> 	
 <?php
 	while(have_posts()){

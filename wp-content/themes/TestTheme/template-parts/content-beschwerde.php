@@ -3,7 +3,7 @@
         <?php the_post_thumbnail('heilmittelPortrait'); ?>
 	</div>
 		
-	<div class="post-item"> 		<!--//Abstand und Rand zwischen jedem Post-->
+	<div class="post-item"> 		
 		<h2 class="headline headline--medium headline--post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 		<div class="metabox">
@@ -18,4 +18,5 @@
 				} ?>
 				<p><a class="btn btn--blue-margin-top" href="<?php the_permalink(); ?>">Lesen &raquo;</a></p>
 		</div>
+	</div>
 	</div>

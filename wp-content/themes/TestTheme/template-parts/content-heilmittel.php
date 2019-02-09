@@ -19,3 +19,4 @@
 				<p><a class="btn btn--blue-margin-top" href="<?php the_permalink(); ?>">Lesen &raquo;</a></p>
 		</div>
 	</div>
+</div>

@@ -1,7 +1,7 @@
 <?php
 
 //Like Function. 'likeFunction' kann überall verwendet werden
-function likeFunction($args = NULL) {
+function likeFunctionHeilmittel($args = NULL) {
 $likeCount = new WP_Query(array(
               'post_type' => 'like',
               'meta_query'=> array(

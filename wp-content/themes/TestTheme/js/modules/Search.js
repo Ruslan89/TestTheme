@@ -49,24 +49,29 @@ class Search {
 			this.resultsDiv.html(`
 				<div class="row">				
 					<div class="one-third">
+						<h2 class="search-overlay__section-title">Beschwerde(n)</h2>
+						${results.beschwerden.length ? '<ul class="link-list min-list">' : `<p>Keine Beschwerden gefunden. <a href="${guData.root_url}/beschwerden">Alle Beschwerden</a></p>`}
+						${results.beschwerden.map(item => `<li><a href="${item.permalink}">${item.title}</a></li>`).join('')}
+						${results.beschwerden.length ? '</ul>' : ''}
+						
 						<h2 class="search-overlay__section-title">Magazin Artikel</h2>
 						${results.magazin.length ? '<ul class="link-list min-list">' : `<p>Keine Artikel gefunden. <a href="${guData.root_url}/magazin">Zum Magazin</a></p>`}			
 						${results.magazin.map(item => `<li><a href="${item.permalink}">${item.title}</a> ${item.postType == 'post' ? `von ${item.authorName}` : ''}</li>`).join('')}	
 						${results.magazin.length ? '</ul>' : ''}					
 					</div>
 					<div class="one-third">
-						<h2 class="search-overlay__section-title">Beschwerden</h2>
-						${results.beschwerden.length ? '<ul class="link-list min-list">' : `<p>Keine Beschwerden gefunden. <a href="${guData.root_url}/beschwerden">Alle Beschwerden</a></p>`}
-						${results.beschwerden.map(item => `<li><a href="${item.permalink}">${item.title}</a></li>`).join('')}
-						${results.beschwerden.length ? '</ul>' : ''}
-						
-					</div>
-					<div class="one-third">
 						<h2 class="search-overlay__section-title">Heilmittel</h2>
 						${results.heilmittel.length ? '<ul class="link-list min-list">' : `<p>Kein Heilmittel gefunden. <a href="${guData.root_url}/heilmittel">Alle Heilmittel</a></p>`}
 						${results.heilmittel.map(item => `<li><a href="${item.permalink}">${item.title}</a></li>`).join('')}
 						${results.heilmittel.length ? '</ul>' : ''}
-					
+						
+					</div>
+					<div class="one-third">					
+						<h2 class="search-overlay__section-title">Vitalstoff(e)</h2>
+						${results.vitalstoffe.length ? '<ul class="link-list min-list">' : `<p>Keinen Vitalstoff gefunden. <a href="${guData.root_url}/vitalstoffe">Alle Vitalstoffe</a></p>`}
+						${results.vitalstoffe.map(item => `<li><a href="${item.permalink}">${item.title}</a></li>`).join('')}
+						${results.vitalstoffe.length ? '</ul>' : ''}
+
 						<h2 class="search-overlay__section-title">Sonstiges</h2>
 						${results.sonstiges.length ? '<ul class="link-list min-list">' : '<p>Keine sonstigen Einträge</p>'}
 						${results.sonstiges.map(item => `<li><a href="${item.permalink}">${item.title}</a></li>`).join('')}

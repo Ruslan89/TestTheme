@@ -3,34 +3,9 @@ get_header();
 seitenBanner();
 
 while(have_posts()) {
-	the_post();
+  the_post();
+  get_template_part('template-parts/page-header');
 ?>
-
-  <div class="container container--narrow page-section">
-
-	<div class="metabox metabox--position-up metabox--with-home-link">
-    <p><a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('heilmittel'); ?>"><i class="fa fa-home" aria-hidden="true"></i> Alle Heilmittel</a> <span class="metabox__main"><?php echo get_the_category_list(', ') ?></span></p>
-  </div>
-
-  	<div class="generic-content">
-      <div class="row group">
-        <div class="one-third">
-          <?php the_post_thumbnail('heilmittelPortrait'); ?>
-        </div>
-
-        <div class="two-thirds">
-          <?php
-          likeFunction();
-          ?>
-
-          <h2 class="headline headline--mainBlue"><?php the_title(); ?><strong> Einleitung</strong></h2>
-          <?php the_field('main_body_content'); ?>
-
-        </div>
-        
-      </div>  
-  	</div>
-
 
   <div class="worko-tabs">
   
@@ -109,15 +84,7 @@ while(have_posts()) {
     </div>
   </div> 
 
-
-    
-<div class="generic-content">
-      <div class="row group">
-        <?php 
-        echo '<br>';
-        echo '<hr class="section-break">';
-        echo '<h2 class="headline headline--medium-center">Verwandte Themen zu ' . get_the_title() . ':</h2>'; 
-        ?>
+  <?php get_template_part('template-parts/page-themen'); ?>
         
         <div>
           <?php 
@@ -163,7 +130,7 @@ while(have_posts()) {
                                       'value'   => '"' . get_the_ID() . '"'
                                     ),
                                   ),
-          ));
+          )); 
 
           if ($passendeBeschwerde->have_posts()) {
             echo '<hr class="section-break">';
@@ -204,41 +171,7 @@ while(have_posts()) {
                   } else {
                   echo wp_trim_words(get_field('main_body_content'), 20); 
                   } ?>
-                  <p><a class="btn btn--blue-margin-top" href="<?php the_permalink(); ?>">Lesen &raquo;</a></p>
-              </div>
-            </div>
-          <?php 
-            } 
-          } ?>
-
-<?php 
-        // Vitalstoff2
-          $passenderVitalstoff = get_field('passender_vitalstoff');
-
-          if ($passenderVitalstoff) {
-            echo '<hr class="section-break">';
-            echo '<h2 class="headline headline--medium-centered">Heilmittel:</h2>';
-            echo '<br>', '<br>', '<br>', '<br>';
-          foreach($passenderVitalstoff as $vitalstoff) { ?>
-            <div class="row group">
-              <div class="one-third">
-                  <?php echo get_the_post_thumbnail($vitalstoff); ?>
-            </div>
-              
-            <div class="post-item"> 		
-              <h2 class="headline headline--medium headline--post-title"><a href="<?php echo get_the_permalink($vitalstoff); ?>"><?php echo get_the_title($heilmittel); ?></a></h2>
-
-              <div class="metabox">
-                <p><?php echo get_the_category_list(', ') ?></p>
-              </div>
-
-              <div>
-                <?php if (has_excerpt()) {
-                  echo get_the_excerpt();
-                  } else {
-                  echo wp_trim_words(get_field('main_body_content'), 20); 
-                  } ?>
-                  <p><a class="btn btn--blue-margin-top" href="<?php the_permalink(); ?>">Lesen &raquo;</a></p>
+                  <p><a class="btn btn--blue-margin-top" href="<?php echo get_the_permalink($heilmittel); ?>">Lesen &raquo;</a></p>
               </div>
             </div>
           <?php 
@@ -272,11 +205,14 @@ while(have_posts()) {
               } wp_reset_postdata();
             }
           ?>
-        </div>          
+        </div>  
+        </div> 
+          </div>
+          </div>
+          </div>
+          </div>
 
-      </div>  
-  	</div>
-  </div> 
+    
 	
 <?php }
 get_footer();

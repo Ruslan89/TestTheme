@@ -26,7 +26,7 @@ function gesundheits_post_types () {
 	));
 //Vitalstoffe	
 	register_post_type('vitalstoff', array(
-		'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'thumbnail'),
+		'supports' => array('title', 'excerpt', 'page-attributes', 'thumbnail'),
 		'taxonomies' => array('category', 'post_tag'),
 		'rewrite' => array('slug' => 'vitalstoffe'),
 		'has_archive' => true, 

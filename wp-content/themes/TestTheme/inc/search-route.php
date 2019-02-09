@@ -11,7 +11,7 @@ function guRegisterSearch() {								//Eigene Suchroute wird erstellt
 
 function guSearchResults($data) {							//Suchroute wird verwendet für...
 	$mainQuery = new WP_Query(array(
-		'post_type' 	=> array('post', 'page', 'heilmittel', 'beschwerde'), 
+		'post_type' 	=> array('post', 'page', 'heilmittel', 'beschwerde', 'vitalstoff'), 
 		's' 			=> sanitize_text_field($data['term']),	//Suchfeld-Eingabe (saniert)
 		'posts_per_page'=> -1,
 	));
@@ -20,6 +20,7 @@ function guSearchResults($data) {							//Suchroute wird verwendet für...
 		'magazin' 		=> array(),							//Leere Arrays, ohne Daten
 		'beschwerden'	=> array(),
 		'heilmittel' 	=> array(),	
+		'vitalstoffe' 	=> array(),
 		'sonstiges'		=> array(),
 	);
 
@@ -29,27 +30,7 @@ function guSearchResults($data) {							//Suchroute wird verwendet für...
 	while($mainQuery->have_posts()) {		//Suchroute wird nach Daten/Suchbegriff durchsucht
 		$mainQuery->the_post();				//Suche so lange, bis es Treffer gibt
 
-	if(get_post_type() == 'post') {
-			$verwandteHeilmittel = get_field('passender_artikel'); //Passendes HM zu Beschw.
-
-			if($verwandteHeilmittel) {					
-				foreach($verwandteHeilmittel as $HM) {
-					array_push($results['heilmittel'], array(
-						'title' => get_the_title($HM),
-						'permalink' => get_the_permalink($HM),
-					));
-				}	
-			}
-
-			array_push($results['magazin'], array(  //Alle Magazin-Posts werden gesucht		
-			'title' 	=> get_the_title(),			//Daten-Ausgabe: Welche Daten sollen bei
-			'permalink' => get_the_permalink(),		//Ausgabe dargestellt werden
-			'postType'	=> get_post_type(),
-			'authorName'=> get_the_author(),
-			'id'		=> get_the_id(),
-		));
-		}
-
+		// Heilmittel
 		if(get_post_type() == 'heilmittel') {			//Singular
 			array_push($results['heilmittel'], array(  	//Plural		
 			'title' 	=> get_the_title(),
@@ -58,24 +39,45 @@ function guSearchResults($data) {							//Suchroute wird verwendet für...
 		));
 		}
 
-		if(get_post_type() == 'beschwerde') {
-			$verwandteHeilmittel = get_field('passendes_heilmittel'); //Passendes HM zu Beschw.
+		// Vitalstoff
+		if(get_post_type() == 'vitalstoff') {			//Singular
+			$verwandteBeschwerde = get_field('passende_beschwerde'); //Passendes HM zu Beschw.
 
-			if($verwandteHeilmittel) {					
-				foreach($verwandteHeilmittel as $HM) {
-					array_push($results['heilmittel'], array(
-						'title' => get_the_title($HM),
-						'permalink' => get_the_permalink($HM)
+			/*if($verwandteBeschwerde) {					
+				foreach($verwandteBeschwerde as $beschwerde) {
+					array_push($results['beschwerden'], array(
+						'title' => get_the_title($beschwerde),
+						'permalink' => get_the_permalink($beschwerde)
 					));
 				}	
-			}
-			array_push($results['beschwerden'], array(  				
+			}*/
+			array_push($results['vitalstoffe'], array(  	//Plural		
 			'title' 	=> get_the_title(),
 			'permalink' => get_the_permalink(),
 			'id'		=> get_the_id(),
 		));
 		}
 
+		// Beschwerde
+		if(get_post_type() == 'beschwerde') {			//Singular
+			$verwandtesHeilmittel = get_field('passendes_heilmittel'); //Passendes HM zu Beschw.
+
+			if($verwandtesHeilmittel) {					
+				foreach($verwandtesHeilmittel as $heilmittel) {
+					array_push($results['heilmittel'], array(
+						'title' => get_the_title($heilmittel),
+						'permalink' => get_the_permalink($heilmittel)
+					));
+				}	
+			}
+			array_push($results['beschwerden'], array(  	//Plural		
+			'title' 	=> get_the_title(),
+			'permalink' => get_the_permalink(),
+			'id'		=> get_the_id(),
+		));
+		}
+
+		// Seiten
 		if(get_post_type() == 'page') {
 			array_push($results['sonstiges'], array(  				
 			'title' 	=> get_the_title(),
@@ -88,11 +90,12 @@ function guSearchResults($data) {							//Suchroute wird verwendet für...
 					//Ausgabe der verknuepften Bereiche
 /*-----------------------------------------------------------------------*/					
 
-	if ($results['heilmittel']) {		//Nur Ausgabe bei Treffern der Kategorie.		
+// Heilmittel
+	if ($results['heilmittel']) {							//Nur Ausgabe bei Treffern der Kategorie.		
 
 	$heilmittelMetaQuery = array('relation' => 'OR');		//Suche in/für alle Kategorien
 
-	foreach($results['heilmittel'] as $item) {		//Vergleich alle gefundenen IDs zu HM
+	foreach($results['heilmittel'] as $item) {				//Vergleich alle gefundenen IDs zu HM
 		array_push($heilmittelMetaQuery, array(				//$HM Array hinzufügen
 				'key' 		=> 'passendes_heilmittel',		//Filter für`s hinzugefügte Array
 				'compare' 	=> 'LIKE',
@@ -101,19 +104,26 @@ function guSearchResults($data) {							//Suchroute wird verwendet für...
 	}
 
 	$heilmittelRelationshipQuery = new WP_Query(array(					//Gesamtes Array
-		'post_type'  	=> array('heilmittel', 'beschwerde', 'post'), 	//Grobe Filter
+		'post_type'  	=> array('heilmittel', 'post'), 	//Grobe Filter
 		'meta_query'	=> $heilmittelMetaQuery							//Eigene Filter s.o.
 	));	
 
 	while($heilmittelRelationshipQuery->have_posts()) {
 		$heilmittelRelationshipQuery->the_post();
 
-		if(get_post_type() == 'beschwerde') {				//Passende Beschw. zu HM
+		/*if(get_post_type() == 'beschwerde') {				//Passende Beschw. zu HM
 			array_push($results['beschwerden'], array(  				
 			'title' 	=> get_the_title(),
 			'permalink' => get_the_permalink(),
 		));
 		}
+
+		if(get_post_type() == 'vitalstoff') {				//Passender Vitalst. zu HM
+			array_push($results['vitalstoffe'], array(  				
+			'title' 	=> get_the_title(),
+			'permalink' => get_the_permalink(),
+		));
+		}*/
 
 		if(get_post_type() == 'post') {						//Passender Artikel zu HM
 			array_push($results['magazin'], array(  				
@@ -129,9 +139,11 @@ function guSearchResults($data) {							//Suchroute wird verwendet für...
 	$results['magazin'] = array_values(array_unique($results['magazin'], SORT_REGULAR));
 	$results['heilmittel'] = array_values(array_unique($results['heilmittel'], SORT_REGULAR));
 	$results['beschwerden'] = array_values(array_unique($results['beschwerden'], SORT_REGULAR));
+	$results['vitalstoffe'] = array_values(array_unique($results['vitalstoffe'], SORT_REGULAR));
 
 }
 
+// Beschwerde
 	if ($results['beschwerden']) {			
 
 	$heilmittelMetaQuery = array('relation' => 'OR');		
@@ -145,7 +157,7 @@ function guSearchResults($data) {							//Suchroute wird verwendet für...
 	}
 
 	$heilmittelRelationshipQuery = new WP_Query(array(					
-		'post_type'  	=> array('heilmittel', 'beschwerde', 'post'), 	
+		'post_type'  	=> array('heilmittel', 'beschwerde', 'post', 'vitalstoff'), 	
 		'meta_query'	=> $heilmittelMetaQuery							
 	));	
 
@@ -160,47 +172,74 @@ function guSearchResults($data) {							//Suchroute wird verwendet für...
 			'authorName'=> get_the_author(),
 		));
 		}	
+
+		if(get_post_type() == 'vitalstoff') {				//Passende Beschw. zu HM
+			array_push($results['vitalstoffe'], array(  				
+			'title' 	=> get_the_title(),
+			'permalink' => get_the_permalink(),
+		));
+		}
 	} 		
 
 	$results['magazin'] = array_values(array_unique($results['magazin'], SORT_REGULAR));
 	$results['heilmittel'] = array_values(array_unique($results['heilmittel'], SORT_REGULAR));
 	$results['beschwerden'] = array_values(array_unique($results['beschwerden'], SORT_REGULAR));
+	$results['vitalstoffe'] = array_values(array_unique($results['vitalstoffe'], SORT_REGULAR));
 
 }
-
-if ($results['magazin']) {			
+	
+// Vitalstoff
+if ($results['vitalstoffe']) {			
 
 	$heilmittelMetaQuery = array('relation' => 'OR');		
 
-	foreach($results['magazin'] as $item) {		
+	foreach($results['vitalstoffe'] as $item) {		
 		array_push($heilmittelMetaQuery, array(				
-				'key' 		=> 'passender_artikel',		
+				'key' 		=> 'passender_vitalstoff',		
 				'compare' 	=> 'LIKE',
 				'value'		=> '"' . $item['id'] . '"'		
  			));
 	}
 
 	$heilmittelRelationshipQuery = new WP_Query(array(					
-		'post_type'  	=> array('heilmittel', 'beschwerde', 'post'), 	
+		'post_type'  	=> array('heilmittel', 'beschwerde', 'post', 'vitalstoff'), 	
 		'meta_query'	=> $heilmittelMetaQuery							
 	));	
 
 	while($heilmittelRelationshipQuery->have_posts()) {
 		$heilmittelRelationshipQuery->the_post();
 
-		if(get_post_type() == 'beschwerde') {				
+		if(get_post_type() == 'post') {						//Passender Artikel zu Beschw.
+			array_push($results['magazin'], array(  				
+			'title' 	=> get_the_title(),
+			'permalink' => get_the_permalink(),
+			'postType'	=> get_post_type(),
+			'authorName'=> get_the_author(),
+		));
+		}	
+
+		if(get_post_type() == 'vitalstoff') {				//Passende Beschw. zu HM
+			array_push($results['vitalstoffe'], array(  				
+			'title' 	=> get_the_title(),
+			'permalink' => get_the_permalink(),
+		));
+		}
+
+		/*if(get_post_type() == 'beschwerde') {				//Passende Beschw. zu HM
 			array_push($results['beschwerden'], array(  				
 			'title' 	=> get_the_title(),
 			'permalink' => get_the_permalink(),
 		));
-		}	
+		}*/
 	} 		
 
 	$results['magazin'] = array_values(array_unique($results['magazin'], SORT_REGULAR));
 	$results['heilmittel'] = array_values(array_unique($results['heilmittel'], SORT_REGULAR));
 	$results['beschwerden'] = array_values(array_unique($results['beschwerden'], SORT_REGULAR));
+	$results['vitalstoffe'] = array_values(array_unique($results['vitalstoffe'], SORT_REGULAR));
 
 }
+
 
 	return $results;	
 }

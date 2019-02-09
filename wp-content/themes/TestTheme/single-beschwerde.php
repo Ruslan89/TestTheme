@@ -1,31 +1,11 @@
 <?php
 get_header();
-seitenBanner(array(
-
-));
+seitenBanner();
 
 while(have_posts()) {
-	the_post();?>
-
-  <div class="container container--narrow page-section">
-
-	<div class="metabox metabox--position-up metabox--with-home-link">
-      	<p><a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('beschwerde'); ?>"><i class="fa fa-home" aria-hidden="true"></i> Alle Beschwerden</a> <span class="metabox__main"><?php echo get_the_category_list(', ') ?></span></p>
-    </div>
-
-  	<div class="generic-content">
-      <div class="row group">
-        <div class="one-third">
-          <?php the_post_thumbnail('heilmittelPortrait'); ?>
-        </div>
-
-        <div class="two-thirds">
-
-          <h2 class="headline headline--mainBlue"><?php the_title(); ?><strong> Einleitung</strong></h2>
-          <?php the_field('main_body_content'); ?>
-        </div>      
-      </div>  
-
+  the_post();
+  get_template_part('template-parts/page-header');
+  ?>
 
       <div class="worko-tabs">
   
@@ -89,51 +69,141 @@ while(have_posts()) {
             </div>
         </div>
       </div> 
-</div>
-  
-  	<?php 
-  	$passendesHeilmittel = get_field('passendes_heilmittel');
 
-  	if ($passendesHeilmittel) {
-	  	echo '<br>', '<br>';
-	  	echo '<hr class="section-break">';
-	  	echo '<h2 class="headline headline--medium">Passendes Heilmittel</h2>';
-	  	echo '<ul class="link-list min-list">';
-  	foreach($passendesHeilmittel as $heilmittel) { ?>
-  		<li><a href="<?php echo get_the_permalink($heilmittel); ?>"><?php echo get_the_title($heilmittel) ?></a></li>
-  	<?php }
-  		echo '</ul>';
-  	}
+    <?php get_template_part('template-parts/page-themen'); ?>
 
-    $passendeBeschwerde = get_field('passende_beschwerde');
+      <?php 
+      // Heilmittel
+          $passendesHeilmittel = get_field('passendes_heilmittel');
 
-    if ($passendeBeschwerde) {
-      echo '<br>', '<br>';
-      echo '<hr class="section-break">';
-      echo '<h2 class="headline headline--medium">Verwandte Beschwerde(n)</h2>';
-      echo '<ul class="link-list min-list">';
-    foreach($passendeBeschwerde as $beschwerde) { ?>
-      <li><a href="<?php echo get_the_permalink($beschwerde); ?>"><?php echo get_the_title($beschwerde) ?></a></li>
-    <?php }
-      echo '</ul>';
-    }
+          if ($passendesHeilmittel) {
+            echo '<hr class="section-break">';
+            echo '<h2 class="headline headline--medium-centered">Heilmittel:</h2>';
+            echo '<br>', '<br>', '<br>', '<br>';
+          foreach($passendesHeilmittel as $heilmittel) { ?>
+            <div class="row group">
+              <div class="one-third">
+                  <?php echo get_the_post_thumbnail($heilmittel); ?>
+            </div>
+              
+            <div class="post-item"> 		
+              <h2 class="headline headline--medium headline--post-title"><a href="<?php echo get_the_permalink($heilmittel); ?>"><?php echo get_the_title($heilmittel); ?></a></h2>
 
-    $passenderArtikel = get_field('passender_artikel');
+              <div class="metabox">
+                <p><?php echo get_the_category_list(', ') ?></p>
+              </div>
 
-    if ($passenderArtikel) {
-      echo '<br>', '<br>';
-      echo '<hr class="section-break">';
-      echo '<h2 class="headline headline--medium">Magazin Artikel</h2>';
-      echo '<ul class="link-list min-list">';
-    foreach($passenderArtikel as $artikel) { ?>
-      <li><a href="<?php echo get_the_permalink($artikel); ?>"><?php echo get_the_title($artikel) ?></a></li>
-    <?php }
-      echo '</ul>';
-    }
-  	
-  	?>
+              <div>
+                <?php if (has_excerpt()) {
+                  echo get_the_excerpt();
+                  } else {
+                  echo wp_trim_words(get_field('main_body_content'), 20); 
+                  } ?>
+                  <p><a class="btn btn--blue-margin-top" href="<?php echo get_the_permalink($heilmittel); ?>">Lesen &raquo;</a></p>
+              </div>
+            </div>
+                </div>
+          <?php 
+            } 
+        } ?>
 
-  </div>
+      <?php 
+          // Magazin
+          $verwandterMagazinbeitrag = new WP_Query (array(
+            'posts_per_page'  => 3,
+            'post_type'       => 'post', 
+            'orderby'         => 'meta_value_num',
+            'order'           => 'ASC',
+            'meta_query'      =>  array (
+                                    array (
+                                      'key'     => 'passende_beschwerde',
+                                      'compare' => 'LIKE',
+                                      'value'   => '"' . get_the_ID() . '"'
+                                    ),
+                                  ),
+          ));
+
+            if ($verwandterMagazinbeitrag->have_posts()) {
+              echo '<hr class="section-break">';
+              echo '<h2 class="headline headline--medium">Magazin</h2>';
+              while($verwandterMagazinbeitrag->have_posts()) {
+                $verwandterMagazinbeitrag->the_post(); 
+                get_template_part('template-parts/content-post', 'excerpt');
+ 
+              } wp_reset_postdata();
+            }
+          ?>
+        </div>
+
+        <?php 
+      // Beschwerde
+          $passendeBeschwerde = get_field('passende_beschwerde');
+
+          if ($passendeBeschwerde) {
+            echo '<hr class="section-break">';
+            echo '<h2 class="headline headline--medium-centered">Beschwerde:</h2>';
+            echo '<br>', '<br>', '<br>', '<br>';
+          foreach($passendeBeschwerde as $beschwerde) { ?>
+            <div class="row group">
+              <div class="one-third">
+                  <?php echo get_the_post_thumbnail($beschwerde); ?>
+            </div>
+              
+            <div class="post-item"> 		
+              <h2 class="headline headline--medium headline--post-title"><a href="<?php echo get_the_permalink($beschwerde); ?>"><?php echo get_the_title($beschwerde); ?></a></h2>
+
+              <div class="metabox">
+                <p><?php echo get_the_category_list(', ') ?></p>
+              </div>
+
+              <div>
+                <?php if (has_excerpt()) {
+                  echo get_the_excerpt();
+                  } else {
+                  echo wp_trim_words(get_field('main_body_content'), 20); 
+                  } ?>
+                  <p><a class="btn btn--blue-margin-top" href="<?php echo get_the_permalink($beschwerde); ?>">Lesen &raquo;</a></p>
+              </div>
+            </div>
+            </div>
+          <?php 
+            } 
+        } ?>
+              
+        <div>
+          <?php  
+          // Vitalstoff
+          $passenderVitalstoff = new WP_Query (array(
+            'posts_per_page'  => 3,
+            'post_type'       => 'vitalstoff', 
+            'orderby'         => 'menu_order',
+            'order'           => 'ASC',
+            'meta_query'      =>  array (
+                                    array (
+                                      'key'     => 'passende_beschwerde',
+                                      'compare' => 'LIKE',
+                                      'value'   => '"' . get_the_ID() . '"'
+                                    ),
+                                  ),
+          ));
+
+          if ($passenderVitalstoff->have_posts()) {
+            echo '<hr class="section-break">';
+            echo '<h2 class="headline headline--medium">Vitalstoff:</h2>';     
+            while($passenderVitalstoff->have_posts()) {
+              $passenderVitalstoff->the_post(); 
+              get_template_part('template-parts/content-heilmittel', 'excerpt');
+
+              } wp_reset_postdata();
+            }
+          ?>
+        </div> 
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
 	
 <?php }
 get_footer();
